@@ -1,4 +1,3 @@
-# placeholder
 
 get '/' do
   erb :index

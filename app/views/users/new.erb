@@ -1,0 +1,17 @@
+<h1>Get form for registering a new user.</h1>
+
+<form action="/users" method="POST" >
+  <div>
+    <label for="user_name">User Name</label>
+    <input name="user[user_name]" type="text">
+  </div>
+  <br>
+  <div>
+    <label for="password">Password</label>
+    <input name="user[password]" type="password">
+  </div>
+  <br>
+  <div>
+    <input name="commit" type="submit" value="Register"/>
+  </div>
+</form>
