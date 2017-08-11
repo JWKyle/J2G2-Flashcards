@@ -1,0 +1,8 @@
+<h1>Decks Index is here</h1>
+
+  <ul>
+    <% @decks.each do |deck| %>
+      <li><a href="/"><%= deck.name %></a></li>
+    <% end %>
+  </ul>
+

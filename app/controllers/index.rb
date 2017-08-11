@@ -1,3 +1,4 @@
+
 get '/' do
-  "Redirect to deck page."
+  erb :index
 end
