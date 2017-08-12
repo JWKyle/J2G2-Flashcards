@@ -11,12 +11,21 @@ end
 
 # link to here is from decks/index page.
 post '/rounds' do
-  @round = Round.create(deck_id: params[:deck_id], user_id: session[:id])
-  redirect '/rounds/#{@round.id}'
+  p params
+  p params[:round]
+  p "*"* 50
+  p params[:round]
+  @round = Round.create(params[:round])
+  p @round
+  redirect "/rounds/#{@round.id}"
 
 end
 
 get '/rounds/:id' do
+  @round = Round.find_by(:id)
+  @card= @round.next_card
+
+
   # until all cards true
   # loop through rounds/:id/cards/:id
   # end

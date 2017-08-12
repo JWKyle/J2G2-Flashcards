@@ -2,8 +2,19 @@
 
   <ul>
     <% @decks.each do |deck| %>
-      <li><a href="/"><%= deck.name %></a></li>
+      <li>
+
+        <p><%= deck.name %><form method="post" action="/rounds">
+          <input type="hidden" name="round[user_id]" value=<%= @user.id %>>
+          <input type="hidden" name="round[deck_id]" value=<%= deck.id %>>
+          <input type="submit" value="play this deck">
+        </form></p>
+
+      </li>
     <% end %>
   </ul>
-  <!-- new form with submit button to persist deck id. action="/rounds" -->
+
+
+
+
 
