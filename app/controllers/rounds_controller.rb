@@ -11,8 +11,8 @@ end
 
 # link to here is from decks/index page.
 post '/rounds' do
-  @round = Round.new(deck_id: params[:deck_id], user_id: session[:id])
-  redirect '/rounds/:id'
+  @round = Round.create(deck_id: params[:deck_id], user_id: session[:id])
+  redirect '/rounds/#{@round.id}'
 
 end
 
