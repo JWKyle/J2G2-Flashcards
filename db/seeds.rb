@@ -1,5 +1,5 @@
 
-User.create(user_name: "master", password: "p")
+# User.create(user_name: "master", password: "p")
 
 3.times {
   Deck.create( name: Faker::Superhero.name )
