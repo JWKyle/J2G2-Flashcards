@@ -8,7 +8,8 @@ post '/users' do
   @user = User.new(params[:user])
 
   if @user.save
-    redirect '/'
+    session[:user_id] = @user.id
+    redirect '/decks'
     #this should eventually go to the decks index page.
   else
     @errors = @user.errors.full_messages
@@ -18,7 +19,7 @@ end
 
 # View specific user profile.
 get '/users/:id' do
-  if params[:id].to_i == current_user.id
+  if authorized?(User.find(params[:id]))
     erb :'/users/show'
   else
     # @errors = ["You are not authorized to view this profile page. Please log in to view your profile page."]
