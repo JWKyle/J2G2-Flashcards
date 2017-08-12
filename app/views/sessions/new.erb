@@ -1,5 +1,11 @@
 <h1>Get a form to start a new session (ie log in!)</h1>
 
+<% if @errors%>
+  <% @errors.each do |error| %>
+  <%= error.full_messages %>
+  <% end %>
+<% end %>
+
 <form action="/sessions" method="POST">
   <div>
     <label for="user_name">User Name</label>
