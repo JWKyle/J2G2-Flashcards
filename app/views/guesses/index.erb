@@ -1,0 +1,7 @@
+<h1>guesses Index is here</h1>
+
+  <ul>
+    <% @guesses.each do |guess| %>
+      <li><a href="/"><%= guess.card.question %></a></li>
+    <% end %>
+  </ul>
