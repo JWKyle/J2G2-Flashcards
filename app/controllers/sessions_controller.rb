@@ -8,13 +8,13 @@ post '/sessions' do
   @user = User.authenticate(params[:user_name], params[:password_text])
   if @user
     session[:user_id] = @user.id
-    redirect '/'
+    redirect '/decks'
   else
     erb :'/sessions/new'
   end
 end
 
 delete '/sessions' do
-  session[:id] = nil
+  session[:user_id] = nil
   redirect '/'
 end
