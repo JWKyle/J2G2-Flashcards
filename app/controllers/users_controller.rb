@@ -11,13 +11,20 @@ post '/users' do
     redirect '/'
     #this should eventually go to the decks index page.
   else
-    @errors = @user.errrors.full_messages
+    @errors = @user.errors.full_messages
     erb :'/users/new'
   end
 end
 
 # View specific user profile.
 get '/users/:id' do
+  if params[:id].to_i == current_user.id
+    erb :'/users/show'
+  else
+    # @errors = ["You are not authorized to view this profile page. Please log in to view your profile page."]
+    redirect '/sessions/new'
+  end
+
 end
 
 # Get form to edit user info.
