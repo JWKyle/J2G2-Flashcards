@@ -18,7 +18,7 @@ end
 
 # View specific user profile.
 get '/users/:id' do
-  if params[:id].to_i == current_user.id
+  if authorized?(User.find(params[:id]))
     erb :'/users/show'
   else
     # @errors = ["You are not authorized to view this profile page. Please log in to view your profile page."]
