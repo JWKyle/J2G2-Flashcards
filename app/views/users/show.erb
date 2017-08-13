@@ -14,7 +14,7 @@
   </tr>
   <!-- Select all of a deck's rounds where the user_name matches current user. (deck.rounds.select {|round| round.user == current_user}) -->
    <!-- Iterate through them and print the row data for each. (deck.rounds.select {|round| round.user == current_user}.each do |round| -->
-   <% deck.rounds.each do |round|%>
+   <% deck.rounds.where(:user_id => current_user.id).each do |round|%>
   <tr>
     <!-- round.created_at -->
     <td><%=round.created_at %></td>
