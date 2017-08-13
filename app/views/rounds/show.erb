@@ -1,5 +1,5 @@
 <h1>This is the round show page</h1>
 
-<h2>deck.name</h2>
+<h2><%= @round.deck.name %></h2>
 
-<p>You've completed a round of deck.name. You answered #/deck.cards.count on the first try. You submitted round.guesses.count total guesses before each card was answered correctly.</p>
+<p>You've completed a round of <%= @round.deck.name %>. You answered <%= @round.cards.count %> on the first try. You submitted <%= @round.guesses.count %> total guesses before each card was answered correctly.</p>
