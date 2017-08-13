@@ -3,4 +3,15 @@
 
 <h3 id="question"><%= @card.question %></h3>
 
-<h3 id="answer">Answer form goes here</h3>
+<h3 id="answer">Answer goes here:</h3>
+
+<form action="/guesses" method="POST">
+  <div>
+    <input type="hidden" name="guess[card_id]" value=<%= @card.id %>>
+    <input type="hidden" name ="guess[round_id]" value=<%= @round.id %>>
+    <input name ="answer" type="text" placeholder="Answer...">
+  </div>
+  <div>
+    <input name="commit" type="submit" value="Submit"/>
+  </div>
+</form>

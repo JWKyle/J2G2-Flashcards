@@ -1,6 +1,7 @@
 # Get a from to start a new session (i.e., the log in page)
 
 get '/sessions/new' do
+  session[:user_id] = nil
   erb :'sessions/new'
 end
 
