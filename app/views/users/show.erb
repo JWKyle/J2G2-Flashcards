@@ -1,8 +1,9 @@
 <h1>Hello <%= current_user.user_name.capitalize %></h1>
 
-<!-- This is the user statistics mock-up. We have the logic to iterate through the rounds and display stats- it should work but for some reason we're not able to comment it out so we just removed it from here to avoid raising errors. We can implement once we have real rounds.-->
-
-<h2>Flashcards</h2>
+<!-- A Table is a deck. Each row is a round played with that deck. -->
+<!-- loop through current_user.rounds.decks  each |deck| do -->
+<!-- deck.name -->
+<h2>Deck Name</h2>
 <h3>Your Performance</h3>
 <table style="width:100%">
   <tr>
@@ -11,19 +12,20 @@
     <th>First Guess Correct</th>
     <th>Total Guesses</th>
   </tr>
+  <!-- Select all of a deck's rounds where the user_name matches current user. (deck.rounds.select {|round| round.user == current_user}) -->
+   <!-- Iterate through them and print the row data for each. (deck.rounds.select {|round| round.user == current_user}.each do |round| -->
   <tr>
+    <!-- round.created_at -->
     <td>June 20th</td>
+    <!-- round.deck.cards.count -->
     <td>20</td>
+    <!-- round.guesses.first_try.count -->
     <td>4</td>
+    <!-- round.guesses.count -->
     <td>54</td>
   </tr>
-  <tr>
-    <td>May 9th</td>
-    <td>30</td>
-    <td>9</td>
-    <td>70</td>
-  </tr>
 </table>
+
 
 
 
