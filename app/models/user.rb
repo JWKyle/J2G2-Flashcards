@@ -2,6 +2,7 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   has_many :rounds
+  has_many :played_decks, through: :rounds, source: :deck
   validates :user_name, {presence: true, uniqueness: true}
 
   def password
