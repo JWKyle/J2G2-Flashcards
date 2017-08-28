@@ -4,7 +4,7 @@ get '/rounds' do
 end
 
 get '/rounds/new' do
-  p params
+
    # should persist deck_id from previous page
 
 end
@@ -25,7 +25,7 @@ get '/rounds/:id' do
   if @card
     redirect "/rounds/#{@round.id}/cards/#{@card.id}"
   else
-    
+
     erb :"/rounds/show"
   end
 end
